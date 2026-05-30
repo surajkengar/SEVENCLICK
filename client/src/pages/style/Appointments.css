@@ -1,0 +1,189 @@
+/* ── Page ─────────────────────────────────────────────── */
+.appt-page {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.appt-loading {
+  color: #6B6B67;
+  font-size: 14px;
+  padding: 40px;
+  text-align: center;
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.appt-header {
+  margin-bottom: 20px;
+}
+
+.appt-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1A1A18;
+  margin-bottom: 4px;
+}
+
+.appt-header p {
+  font-size: 13px;
+  color: #6B6B67;
+}
+
+/* ── Filter tabs ──────────────────────────────────────── */
+.appt-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #ffffff;
+  font-size: 13px;
+  color: #6B6B67;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover {
+  background: #F5F5F3;
+  color: #1A1A18;
+}
+
+.filter-btn.active {
+  background: #185FA5;
+  color: #ffffff;
+  border-color: #185FA5;
+}
+
+.filter-count {
+  background: rgba(0,0,0,0.08);
+  border-radius: 20px;
+  padding: 1px 7px;
+  font-size: 11px;
+}
+
+.filter-btn.active .filter-count {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ── Empty state ──────────────────────────────────────── */
+.appt-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.appt-empty p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1A1A18;
+  margin-bottom: 6px;
+}
+
+.appt-empty span {
+  font-size: 13px;
+  color: #6B6B67;
+}
+
+/* ── List ─────────────────────────────────────────────── */
+.appt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+.appt-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  transition: border-color 0.15s;
+}
+
+.appt-card:hover {
+  border-color: rgba(0,0,0,0.15);
+}
+
+/* ── Left ─────────────────────────────────────────────── */
+.appt-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.appt-service {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1A18;
+}
+
+.appt-details {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #6B6B67;
+}
+
+.appt-note {
+  font-size: 12.5px;
+  color: #6B6B67;
+  font-style: italic;
+}
+
+.appt-meta {
+  font-size: 11.5px;
+  color: #9E9E99;
+}
+
+/* ── Right ────────────────────────────────────────────── */
+.appt-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.appt-status {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+/* ── Cancel button ────────────────────────────────────── */
+.cancel-appt-btn {
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  border: 1px solid #FCEBEB;
+  background: #FCEBEB;
+  color: #A32D2D;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.cancel-appt-btn:hover {
+  background: #fee2e2;
+}
+
+.cancel-appt-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
