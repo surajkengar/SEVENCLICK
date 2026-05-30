@@ -293,7 +293,7 @@ export const forgotpassword = async(req , res , next)=>{
         await user.save();
 
         console.log("resetpassword and resetexpiry save in memory");
-        const resertLink = `http://localhost:5173/resetpassword/${token}`;
+        const resertLink = `https://sevenclick.onrender.com/resetpassword/${token}`;
 
         await sendemail(
             user.emailid,
