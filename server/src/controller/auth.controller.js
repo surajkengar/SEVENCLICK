@@ -185,8 +185,8 @@ export const Login = async (req , res)=>{
     console.log("jwt token created");
     const options = {
         httpOnly : true,
-        secure : process.env.NODE_ENV === "production",
-        sameSite : "lax",
+        secure : true,
+        sameSite : "none",
         maxAge:24 * 60 * 60 * 1000
     }
     console.log("jwt token set");
@@ -248,9 +248,9 @@ export const logout = async (req , res) => {
 
     res.cookie("token","",{
         httpOnly : true,
-        expiresIn : new Date(0),
-        secure :process.env.NODE_ENV === "production",
-        sameSite : "lax"
+        expires : new Date(0),
+        secure : true,
+        sameSite : "none"
     })
 
     return res.status(200).json({
