@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMyAppointments, cancelAppointment } from "../api/DashboardApi";
 import toast from "react-hot-toast";
-import "./style/appointments.css";
+import "./style/Appointments.css";
 
 function Appointments() {
   const [appointments, setAppointments] = useState([]);
