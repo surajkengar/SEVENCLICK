@@ -1,0 +1,388 @@
+/* ===================== GLOBAL ===================== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #778ab2;
+}
+
+/* ===================== NAVBAR ===================== */
+
+.navbar1 {
+  height: 70px;
+  width: 100%;
+  background: #111827; /* dark */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  color :#fff ;
+  border-bottom: 1px solid #1f2937;
+  background-color: #1e293b;
+}
+
+/* Right side */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+/* Avatar */
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Dropdown */
+.profile-dropdown {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 180px;
+  background: #1f2937;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.profile-menu p {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+.profile-menu p:hover {
+  background: #374151;
+}
+
+/* ===================== LAYOUT ===================== */
+
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.dashboard-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ===================== SIDEBAR ===================== */
+
+.sidebar {
+  width: 240px;
+  background: #020617;
+  color: #fff;
+  padding: 20px 15px;
+  border-right: 1px solid #1f2937;
+}
+
+/* Menu */
+.sidebar-menu {
+  margin-top: 10px;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Links */
+.link {
+  display: block;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  color: #cbd5f5;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  background: #1e293b;
+  color: #fff;
+}
+
+.link.active {
+  background: #4f46e5;
+  color: #fff;
+}
+
+/* ===================== CONTENT ===================== */
+
+.dashboard-content {
+  flex: 1;
+  background: #0f172a;  /* dark navy */
+  padding: 25px;
+  overflow-y: auto;
+  color: #ffffff;
+}
+
+/* ===================== DASHBOARD BODY ===================== */
+
+.dashboard {
+  color: #fff;
+}
+
+/* Header */
+.dashboard-header h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.dashboard-header p {
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+/* ===================== STATS ===================== */
+
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  flex: 1;
+  background: #020617;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #3d424a;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: #4f46e5;
+}
+
+.card p {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.card h3 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.card span {
+  color: #22c55e;
+  font-size: 13px;
+}
+
+/* ===================== SERVICES ===================== */
+
+.services h3 {
+  margin-bottom: 15px;
+}
+
+.service-card1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #020617;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  border: 1px solid rgb(79, 75, 72);
+  transition: all 0.2s ease;
+}
+
+.service-card1:hover {
+  background: #0f172a;
+  border-color: #4f46e5;
+}
+
+.service-card1 h4 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.service-card1 p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.service-card1 span {
+  font-size: 20px;
+  color: #64748b;
+}
+
+/*Dropdown*/
+
+/* Dropdown container */
+.profile-dropdown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 200px;
+  background: #1e1e2f;
+  border-radius: 10px;
+  padding: 8px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* Menu item */
+.profile-info {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.profile-info:hover {
+  background: #2a2a40;
+}
+
+/* Text */
+.name {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Divider line */
+.divider {
+  height: 1px;
+  background: #333;
+  margin: 5px 0;
+}
+
+/* Logout button */
+.logout-btn {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background: transparent;
+  color: #ef4444;
+  text-align: left;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #2a2a40;
+}
+
+/*Appoitment form css*/
+/* FORM CARD */
+.form-card {
+  margin: 20px auto;   /* center horizontally */
+  width: 100%;
+  max-width: 900px; 
+  margin-top: 20px;
+  background: #1e1e2f;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* TITLE */
+.form-card h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #7c3aed;
+}
+
+/* ROW (2 inputs side by side) */
+.form-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* INPUT + SELECT + TEXTAREA */
+.form-row input,
+.form-row select,
+.form-card textarea {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #2a2a40;
+  background: #2a2a40;
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+/* TEXTAREA FIX */
+.form-card textarea {
+  width: 100%;
+  min-height: 80px;
+  margin-bottom: 12px;
+  resize: none;
+}
+
+/* PLACEHOLDER COLOR */
+::placeholder {
+  color: #aaa;
+}
+
+/* FOCUS EFFECT */
+input:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid #3b82f6;
+}
+
+/* BUTTON */
+.book-btn {
+  width: 100%;
+  padding: 12px;
+  background: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.book-btn:hover {
+  background: #2563eb;
+}
+
+/* RESPONSIVE (mobile) */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+.success-card {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.success-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #EAF3DE;
+  color: #27500A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 16px;
+}
