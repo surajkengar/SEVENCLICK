@@ -71,7 +71,7 @@ export const registerController = async (req , res)=>{
          isVerified : false
     })
     console.log("new user created and saved ");
-    const verificationLink = `http://localhost:5000/api/v1/auth/verifyuser/${verificationToken}`;
+    const verificationLink = ` https://sevenclick.onrender.com/api/v1/auth/verifyuser/${verificationToken}`;
 
     await sendemail(
         Newuser.emailid,
