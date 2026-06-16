@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllUsers , blockUser } from "../api/DashboardApi.jsx";
 import toast from "react-hot-toast";
-import "../style/Admin.css";
+import "./style/admin.css";
 
 function AdminUsers() {
   const [users, setUsers]     = useState([]);

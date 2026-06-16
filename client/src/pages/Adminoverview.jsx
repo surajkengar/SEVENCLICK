@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAnalytics } from "../api/DashboardApi.jsx";
-import "../style/Admin.css";
+import "./style/admin.css";
 
 function AdminOverview() {
   const [data, setData]     = useState(null);
