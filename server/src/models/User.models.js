@@ -24,19 +24,24 @@ const userSchema = new mongoose.Schema({
     password : {
         type : String,
         required : true,
-        minlength : 6
+        minlength : 6,
+    },
+
+    isBlocked : {
+        type : Boolean,
+        default : false
     },
 
     verificationToken :{
         type : String 
     },
 
-    verificationTokenExpity : {
+    verificationTokenExpiry : {
         type : Date
     },
 
     isVerified : {
-        type : String,
+        type : Boolean,
         default : false
     },
 
