@@ -22,6 +22,14 @@ import Management from "./pages/Management.jsx";
 import Profile from "./pages/Profile.jsx";
 import Appointments from "./pages/Appointments.jsx";
 
+// AdminLayout +  pages
+
+import AdminLayout from "./Componant/Layout/AdminLayout.jsx";
+import AdminAppointments from "./pages/Adminappointments.jsx";
+import AdminOverview from "./pages/Adminoverview.jsx";
+import AdminUsers from "./pages/Adminusers.jsx";
+
+
 // ── Private Route ──────────────────────────────────────
 function PrivateRoute({ children }) {
   const { user, loading, isLoggingOut } = useAuth();
@@ -45,6 +53,18 @@ function PrivateRoute({ children }) {
   if (isLoggingOut) return null;
 
   return user ? children : <Navigate to="/Login" replace />;
+}
+
+
+
+// Add AdminRoute function
+function AdminRoute({ children }) {
+  const { user, loading, isLoggingOut } = useAuth();
+  if (loading) return <div style={{height:"100vh",display:"flex",alignItems:"center",justifyContent:"center"}}>Loading...</div>;
+  if (isLoggingOut) return null;
+  if (!user) return <Navigate to="/Login" replace />;
+  if (user.role !== "admin") return <Navigate to="/dashboard" replace />;
+  return children;
 }
 
 // ── Routes ─────────────────────────────────────────────
@@ -76,6 +96,12 @@ function AppRoutes() {
         <Route path="management" element={<Management/>} />
         <Route path="profile"    element={<Profile/>} />
         <Route path="appointments" element={<Appointments />} />
+      </Route>
+
+      <Route path="/admin" element={<AdminRoute><AdminLayout /></AdminRoute>}>
+        <Route index                element={<AdminOverview />} />
+        <Route path="appointments"  element={<AdminAppointments />} />
+        <Route path="users"         element={<AdminUsers />} />
       </Route>
 
       {/* Catch all */}
