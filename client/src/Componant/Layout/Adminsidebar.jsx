@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "./style/Adminsidebar.css";
+import "./admin.css";
 
 const NAV = [
   { to: "/admin",              label: "Overview",       icon: "📊", end: true },

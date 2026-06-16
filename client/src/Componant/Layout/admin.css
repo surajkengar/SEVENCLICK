@@ -1,4 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+/*Admin layout css */
+
+.admin-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: #F5F5F3;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.admin-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.admin-main {
+  flex: 1;
+  overflow-y: auto;
+  background: #F5F5F3;
+  padding: 24px;
+}
+
+/*Admin navbar css file*/
 
 .admin-navbar {
   height: 52px;
@@ -103,4 +127,54 @@
 
 .admin-logout-btn:hover {
   background: rgba(248,113,113,0.1);
+}
+
+/*admin sidebar css*/
+
+
+.admin-sidebar {
+  width: 210px;
+  flex-shrink: 0;
+  background: #1e293b;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.admin-sidebar-nav {
+  padding: 12px 8px;
+}
+
+.admin-sidebar-section {
+  font-size: 10.5px;
+  color: #475569;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 8px 10px 4px;
+}
+
+.admin-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 2px;
+  text-decoration: none;
+  transition: background 0.12s, color 0.12s;
+}
+
+.admin-sidebar-item:hover {
+  background: rgba(255,255,255,0.05);
+  color: #ffffff;
+}
+
+.admin-sidebar-item--active {
+  background: #3b82f6;
+  color: #ffffff;
+  font-weight: 500;
 }

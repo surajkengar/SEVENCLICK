@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { logoutUser } from "../../api/authApi";
 import toast from "react-hot-toast";
-import "./style/Adminnavbar.css";
+import "./admin.css";
 function AdminNavbar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
