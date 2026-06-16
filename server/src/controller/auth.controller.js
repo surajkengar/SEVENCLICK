@@ -139,6 +139,7 @@ export const verifyEmail = async (req , res)=>{
 export const Login = async (req , res)=>{
     try{
       // get email and password from request body
+    console.log("REQ BODY:", req.body); // ← add this line
       console.log("code execuation started");
        const{emailid , password} = req.body;
 
@@ -157,7 +158,7 @@ export const Login = async (req , res)=>{
        console.log(existingUser.isVerified);
     // check email is verified or not
 
-       if((existingUser.isVerified === "false")){
+       if((existingUser.isVerified === false)){
             return res.status(400).json({
                 success : false,
                 message : "please verify your email address"
@@ -165,7 +166,9 @@ export const Login = async (req , res)=>{
        }
        console.log("verified user");
     //compared hashed password with password stored in database
-
+       console.log("input password:", password);
+        console.log("stored hash:", existingUser.password);
+        console.log("hash length:", existingUser.password?.length);
     const isMatch = await bcrypt.compare(password , existingUser.password);
 
     if(!isMatch){
@@ -178,7 +181,9 @@ export const Login = async (req , res)=>{
     // create JWT token
 
     const token = jwt.sign(
-        {id : existingUser._id},
+        {id : existingUser._id,
+         role: existingUser.role
+        },
         process.env.JWT_SECRET,
         {expiresIn : "24h"}
     )
@@ -218,7 +223,7 @@ export const Getme = async (req , res) =>{
              //check use in database using id
         console.log("code execution started");
         const user = await User.findById(req.user.id).select("-password");
-
+        console.log("getme user:", user);
         if(!user){
             return res.status(400).json({
                 success : false,
