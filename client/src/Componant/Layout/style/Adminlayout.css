@@ -1,0 +1,21 @@
+.admin-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: #F5F5F3;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.admin-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.admin-main {
+  flex: 1;
+  overflow-y: auto;
+  background: #F5F5F3;
+  padding: 24px;
+}
