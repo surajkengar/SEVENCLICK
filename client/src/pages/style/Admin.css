@@ -1,0 +1,292 @@
+/* ── Page ─────────────────────────────────────────────── */
+.admin-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.admin-loading {
+  color: #6B6B67;
+  font-size: 14px;
+  padding: 40px;
+  text-align: center;
+}
+
+/* ── Page header ──────────────────────────────────────── */
+.admin-page-header {
+  margin-bottom: 24px;
+}
+
+.admin-page-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1A1A18;
+  margin-bottom: 4px;
+}
+
+.admin-page-header p {
+  font-size: 13px;
+  color: #6B6B67;
+}
+
+/* ── KPI grid ─────────────────────────────────────────── */
+.admin-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.admin-kpi-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.admin-kpi-label {
+  font-size: 12px;
+  color: #6B6B67;
+  margin-bottom: 8px;
+}
+
+.admin-kpi-val {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1A1A18;
+}
+
+/* ── Section ──────────────────────────────────────────── */
+.admin-section {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+
+.admin-section h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1A1A18;
+  margin-bottom: 14px;
+}
+
+/* ── Breakdown ────────────────────────────────────────── */
+.admin-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.breakdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #1A1A18;
+}
+
+.breakdown-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.breakdown-count {
+  margin-left: auto;
+  font-weight: 500;
+}
+
+/* ── Service stats ────────────────────────────────────── */
+.service-stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 13px;
+  color: #1A1A18;
+}
+
+.service-stat-row:last-child { border-bottom: none; }
+
+.service-stat-count {
+  font-weight: 500;
+  color: #3b82f6;
+}
+
+/* ── Filters ──────────────────────────────────────────── */
+.admin-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.admin-filter-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #ffffff;
+  font-size: 13px;
+  color: #6B6B67;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.admin-filter-btn:hover { background: #F5F5F3; }
+.admin-filter-btn.active {
+  background: #1e293b;
+  color: #ffffff;
+  border-color: #1e293b;
+}
+
+/* ── Search ───────────────────────────────────────────── */
+.admin-search {
+  width: 100%;
+  max-width: 320px;
+  padding: 8px 14px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.admin-search:focus { border-color: #3b82f6; }
+
+/* ── Table ────────────────────────────────────────────── */
+.admin-table-wrap {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.admin-table th {
+  background: #F8FAFC;
+  padding: 11px 16px;
+  text-align: left;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #6B6B67;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  color: #1A1A18;
+  vertical-align: middle;
+}
+
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: #F8FAFC; }
+
+/* ── Status badge ─────────────────────────────────────── */
+.admin-status-badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+/* ── Status select ────────────────────────────────────── */
+.admin-status-select {
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #ffffff;
+  color: #1A1A18;
+  cursor: pointer;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── User avatar row ──────────────────────────────────── */
+.user-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-mini-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #E6F1FB;
+  color: #0C447C;
+  font-size: 11px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Appointment user info ────────────────────────────── */
+.appt-user-name {
+  font-weight: 500;
+  font-size: 13px;
+  color: #1A1A18;
+}
+
+.appt-user-email {
+  font-size: 11.5px;
+  color: #6B6B67;
+  margin-top: 2px;
+}
+
+/* ── Plan tag ─────────────────────────────────────────── */
+.plan-tag {
+  background: #E6F1FB;
+  color: #185FA5;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+/* ── Block button ─────────────────────────────────────── */
+.block-btn {
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.15s;
+}
+
+.block-btn.block {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.block-btn.block:hover { background: #FECACA; }
+
+.block-btn.unblock {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.block-btn.unblock:hover { background: #A7F3D0; }
+
+.block-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
