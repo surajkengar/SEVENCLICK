@@ -10,17 +10,17 @@ function DashboardNavbar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
-async function handleLogout() {
-  try {
-    await logoutUser();
-    logout(); 
-     toast.success("Logged out successfully");        // sets isLoggingOut = true + clears user
-    navigate("/");    // goes to landing page
-  } catch (error) {
-     toast.error("Logout failed. Try again.");
-    console.log("logout error:", error);
+  async function handleLogout() {
+    try {
+      await logoutUser();
+      logout();
+      toast.success("Logged out successfully");
+      navigate("/");
+    } catch (error) {
+      toast.error("Logout failed. Try again.");
+      console.log("logout error:", error);
+    }
   }
-}
 
   return (
     <header className="navbar1">
@@ -29,6 +29,17 @@ async function handleLogout() {
       </div>
 
       <div className="right-section">
+
+        {/* ✅ Admin Panel button — only shows for admin */}
+        {user?.role === "admin" && (
+          <button
+            className="admin-panel-btn"
+            onClick={() => navigate("/admin")}
+          >
+            Admin Panel
+          </button>
+        )}
+
         <div className="avatar" onClick={() => setOpen(!open)}>
           {user?.fullname?.charAt(0) || "U"}
         </div>
@@ -37,7 +48,7 @@ async function handleLogout() {
           <Profilemenu
             user={user}
             onClose={() => setOpen(false)}
-            onLogout={handleLogout}  
+            onLogout={handleLogout}
           />
         )}
       </div>
