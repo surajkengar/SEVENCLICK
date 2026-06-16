@@ -15,6 +15,7 @@ export function AuthProvider({ children }) {
   async function checkAuth() {
     try {
       const res = await getmeUser();
+      console.log("checkAuth response:", res.data.user);
       if (res.data.success) {
         setUser(res.data.user);
         setIsLoggingOut(false);
