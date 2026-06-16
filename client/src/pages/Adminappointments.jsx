@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { getAllAppointments, updateAppointmentStatus } from "../api/DashboardApi.jsx";
 import toast from "react-hot-toast";
-import "./style/admin.css";
+import "./style/Admin.css";
+
 
 const serviceLabel = {
   strategy:  "Strategy",
