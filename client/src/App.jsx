@@ -21,6 +21,7 @@ import Optimization from "./pages/Optimization.jsx";
 import Management from "./pages/Management.jsx";
 import Profile from "./pages/Profile.jsx";
 import Appointments from "./pages/Appointments.jsx";
+import Pricing from "./pages/Pricing.jsx";
 
 // AdminLayout +  pages
 
@@ -96,6 +97,7 @@ function AppRoutes() {
         <Route path="management" element={<Management/>} />
         <Route path="profile"    element={<Profile/>} />
         <Route path="appointments" element={<Appointments />} />
+        <Route path="pricing" element={<Pricing />} />
       </Route>
 
       <Route path="/admin" element={<AdminRoute><AdminLayout /></AdminRoute>}>
