@@ -4,6 +4,7 @@ import authroutes from "./routes/authRoutes.js";
 import appointmentrouter from "./routes/Appoitnment.router.js";
 import chatRouter from "./routes/Chat.routes.js";
 import adminRouter from "./routes/admin.routes.js";
+import paymentRouter from "./routes/Payment.routes.js";
 import cookieparser from "cookie-parser";
 
 
@@ -28,6 +29,7 @@ app.use("/api/v1/auth" , authroutes);
 app.use("/api/v1/appoitnment" , appointmentrouter);
 app.use("/api/v1/chat" , chatRouter);
 app.use("/api/v1/admin" , adminRouter);
+app.use("/api/v1/payment" ,paymentRouter);
 
 app.get("/" ,(req , res) => {
     res.send("server is running");
