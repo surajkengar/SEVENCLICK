@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { getChatHistory, sendChatMessage, clearChatHistory } from "../api/DashboardApi";
+import PlanGate from "../Componant/PlanGate";
 import "./style/supply.css";
 
 function Optimization() {
@@ -79,6 +80,7 @@ function Optimization() {
   }
 
   return (
+  <PlanGate requires="canAccessAI">
     <div className="chat-wrapper">
 
       {/* Header */}
@@ -143,6 +145,8 @@ function Optimization() {
       </div>
 
     </div>
+  </PlanGate>
+   
   );
 }
 
