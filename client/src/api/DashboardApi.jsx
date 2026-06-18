@@ -17,3 +17,9 @@ export const blockUser = (id) => API.patch(`/admin/blockuser/${id}`);
 export const getAllAppointments = ()  => API.get("/admin/allappointments");
 export const updateAppointmentStatus = (id , status) => API.patch(`/admin/appointmentstatus/${id}`,{status});
 export const getAnalytics = () => API.get("/admin/analytics");
+
+//--------- Pricing----------------------
+
+export const createPaymentOrder = (data) => API.post("/payment/createorder", data);
+export const verifyUserPayment  = (data) => API.post("/payment/verifypayment", data);
+export const getPaymentHistory  = ()     => API.get("/payment/history");
