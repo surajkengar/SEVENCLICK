@@ -35,6 +35,10 @@ function Sidebar() {
           Management
         </NavLink>
 
+        <NavLink to="/dashboard/pricing" className="link">
+          Upgrade Plan
+        </NavLink>
+
       </div>
     </div>
   );
