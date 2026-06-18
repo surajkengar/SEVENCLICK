@@ -1,5 +1,5 @@
 import Appoitnment from "../models/Appoitnment.model.js";
-
+import User from "../models/User.models.js";
 // ── Book appointment ────────────────────────────────────
 export const BookAppoitnment = async (req, res) => {
   try {
@@ -10,6 +10,31 @@ export const BookAppoitnment = async (req, res) => {
       return res.status(400).json({
         success: false,
         message: "Please fill all required fields",
+      });
+    }
+
+        // ✅ check plan limits
+    const user = await User.findById(req.user.id);
+
+    // get current month appointments
+    const startOfMonth = new Date();
+    startOfMonth.setDate(1);
+    startOfMonth.setHours(0, 0, 0, 0);
+
+    const monthlyCount = await Appoitnment.countDocuments({
+      user:      req.user.id,
+      createdAt: { $gte: startOfMonth },
+      status:    { $in: ["pending", "confirmed"] },
+    });
+
+    // check limit based on plan
+    const limits = { free: 2, standard: 10, pro: Infinity };
+    const userLimit = limits[user.plan] || 2;
+
+    if (monthlyCount >= userLimit) {
+      return res.status(403).json({
+        success: false,
+        message: `Your ${user.plan} plan allows only ${userLimit} appointments per month. Please upgrade your plan.`,
       });
     }
 
