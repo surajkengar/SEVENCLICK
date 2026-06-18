@@ -1,10 +1,13 @@
 import DashboardLayout from "../Componant/Layout/DashboardLayout";
 import Appoitnmentform from "../Componant/Layout/Appointmentform";
+import PlanGate from "../Componant/PlanGate";
+
 
 function Marketing(){
     return (
-        
-            <div className="startegy-page">
+
+    <PlanGate requires="canAccessMarketing">
+        <div className="startegy-page">
 
         {/* ✅ MOVE header inside container */}
         <div className="content-container">
@@ -38,10 +41,8 @@ function Marketing(){
 
         </div>
 
-    </div>
-
-
-            
+        </div>
+    </PlanGate>         
         
     )
 }
