@@ -190,8 +190,8 @@ export const Login = async (req , res)=>{
     console.log("jwt token created");
     const options = {
         httpOnly : true,
-        secure : true,
-        sameSite : "none",
+        secure : false,
+        sameSite : "lax",
         maxAge:24 * 60 * 60 * 1000
     }
     console.log("jwt token set");
@@ -254,8 +254,8 @@ export const logout = async (req , res) => {
     res.cookie("token","",{
         httpOnly : true,
         expires : new Date(0),
-        secure : true,
-        sameSite : "none"
+        secure : false,
+        sameSite : "lax"
     })
 
     return res.status(200).json({
