@@ -1,82 +1,85 @@
-import mongoose  from "mongoose";
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-    fullname : {
-        type : String,
-        required : true,
-        trim : true
-    },
+  fullname: {
+    type: String,
+    required: true,
+    trim: true,
+  },
 
-    emailid : {
-        type : String,
-        required : true,
-        trim :true,
-        lowercase : true,
-        unique : true
-    },
+  emailid: {
+    type: String,
+    required: true,
+    trim: true,
+    lowercase: true,
+    unique: true,
+  },
 
-    mobileno : {
-        type :String,
-        required : true,
-        trim : true
-    },
+  mobileno: {
+    type: String,
+    required: true,
+    trim: true,
+  },
 
-    password : {
-        type : String,
-        required : true,
-        minlength : 6,
-    },
+  password: {
+    type: String,
+    required: true,
+    minlength: 6,
+  },
 
-    isBlocked : {
-        type : Boolean,
-        default : false
-    },
+  isBlocked: {
+    type: Boolean,
+    default: false,
+  },
 
-    verificationToken :{
-        type : String 
-    },
+  verificationToken: {
+    type: String,
+  },
 
-    verificationTokenExpiry : {
-        type : Date
-    },
+  verificationTokenExpiry: {
+    type: Date,
+  },
 
-    isVerified : {
-        type : Boolean,
-        default : false
-    },
+  isVerified: {
+    type: Boolean,
+    default: false,
+  },
 
-    referralid : {
-        type : String,
-        trim : true
-    },
+  referralid: {
+    type: String,
+    trim: true,
+  },
 
-    resetpasswordToken : {
-        type : String 
-    },
+  resetpasswordToken: {
+    type: String,
+  },
 
-    resetpasswordExpiry : {
-        type : Date
-    },
+  resetpasswordExpiry: {
+    type: Date,
+  },
 
-    avatar : {
-        type : String,
-        default : ""
-    },
+  avatar: {
+    type: String,
+    default: "",
+  },
 
-    role :{
-        type : String,
-        enum : ["user" , "admin"],
-        default : "user"
-    },
+  role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user",
+  },
 
+  // ✅ add this — was missing!
+  plan: {
+    type: String,
+    enum: ["free", "standard", "pro"],
+    default: "free",
+  },
 
-
-
-},{
-    timestamps :true
+}, {
+  timestamps: true,
 });
 
-const User = mongoose.model("User" ,userSchema);
+const User = mongoose.model("User", userSchema);
 
 export default User;
-
